@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.js"></script>
+    <script src="//unpkg.com/ml5@0.4.3/dist/ml5.min.js" target="_blank"></script>
+    <style>
+        label{
+            font-size: 15px;
+        }
+    </style>
+</head>
+<body style="background-size: cover; background-image: url('https://img.freepik.com/free-vector/quiz-background-with-flat-objects_23-2147593080.jpg?size=338&ext=jpg');">
+    <div style="background-color: lightblue; padding: 20px;" id="div_1">
+        <span>
+            <label style="font-weight: bold;">Q1. HTML stands for -</label>
+        </span>
+        
+        <span>
+            <br><br><input id="div_1_option_1" type="radio" style="border-radius: 500px !important;">
+            <label>Hyper Text Markup Language</label>
+            <br><input id="div_1_option_2" type="radio" style="border-radius: 500px !important;">
+            <label>Hyper Text Makeup Language</label>
+            <br><input id="div_1_option_3" type="radio" style="border-radius: 500px !important;">
+            <label>Hyper Text Maskup Language</label>
+
+            <button onclick="changeQuestions('2')" class="btn btn-success">Next</button>
+            <button onclick="check('Hyper Text Markup Language', 'div_1_option_1', this)" class="btn btn-success">Check</button>
+        </span>
+
+        
+    </div>
+
+
+    <div id="div_2" style="display: none; background-color: lightblue; padding: 20px;">
+        <span>
+            <label style="font-weight: bold;">Q2. Who is making the Web Standards?</label>
+        </span>
+        
+        <span>
+            <br><br><input id="div_2_option_1" type="radio">
+            <label>Google</label>
+            <br><input id="div_2_option_2" type="radio">
+            <label>Microsoft</label>
+            <br><input id="div_2_option_3" type="radio">
+            <label>World Wide Consotium</label>
+        </span>
+
+        <button onclick="changeQuestions('3')" class="btn btn-success">Next</button>
+        <button onclick="check('World Wide Consotium', 'div_2_option_3')" class="btn btn-success">Check</button>
+
+    </div>
+
+
+    <div id="div_3" style="display: none; background-color: lightblue; padding: 20px;">
+        <span>
+            <label style="font-weight: bold;">Q3. The BODY Tag Is Usually Used After -</label>
+        </span>
+        
+        <span>
+            <br><br><input id="div_3_option_1" type="radio">
+            <label>EM Tag</label>
+            <br><input id="div_3_option_2" type="radio">
+            <label>TITLE Tag</label>
+            <br><input id="div_3_option_3" type="radio">
+            <label>HTML Tag</label>
+        </span>
+        <button onclick="changeQuestions('4')" class="btn btn-success">Next</button>
+        <button onclick="check('HTML Tag', 'div_3_option_3')" class="btn btn-success">Check</button>
+
+    </div>
+
+
+    <div id="div_4" style="display: none; background-color: lightblue; padding: 20px;">
+        <span>
+            <label style="font-weight: bold;">Q4. ALL HTML Tags Are Must Be Enclosed In? -</label>
+        </span>
+        
+        <span>
+            <br><br><input id="div_4_option_1" type="radio">
+            <label> ? And !</label>
+            <br><input id="div_4_option_2" type="radio">
+            <label>< And ></label>
+            <br><input id="div_4_option_3" type="radio">
+            <label> { And }</label>
+        </span>
+        <button onclick="changeQuestions('5')" id="btn btn-success">Next</button>
+        <button onclick="check('< And >', 'div_4_option_2')" class="btn btn-success">Check</button>
+
+    </div>
+
+
+    <div id="div_5" style="display: none; background-color: lightblue; padding: 20px;">
+        <span>
+            <label style="font-weight: bold;">Q5. To start a list using circles, use -</label>
+        </span>
+        
+        <span>
+            <br><br><input id="div_5_option_1" type="radio">
+            <label>ul Type="circle"</label>
+            <br><input id="div_5_option_2" type="radio">
+            <label>ul round</label>
+            <br><input id="div_5_option_3" type="radio">
+            <label>ul = "round"</label>
+        </span>
+
+        <button onclick="changeQuestions('6')" id="btn btn-success">Next</button>
+        <button onclick="check('ul round', 'div_5_option_2')" class="btn btn-success">Check</button>
+
+    </div>
+
+
+    <div id="div_6" style="display: none; background-color: lightblue; padding: 20px;">
+        <span>
+            <label style="font-weight: bold;">Q6. A simple Text file that tells the browser what to cache is known as  -</label>
+        </span>
+        
+        <span>
+            <br><br><input id="div_6_option_1" type="radio">
+            <label>Input Files</label>
+            <br><input id="div_6_option_2" type="radio">
+            <label>Output Files</label>
+            <br><input id="div_6_option_3" type="radio">
+            <label>Html File</label>
+        </span>
+
+        <button onclick="changeQuestions('7')" id="btn btn-success">Next</button>
+        <button onclick="check('Html File', 'div_6_option_3')" class="btn btn-success">Check</button>
+
+    </div>
+
+
+    <div id="div_7" style="display: none; background-color: lightblue; padding: 20px;">
+        <span>
+            <label style="font-weight: bold;">Q7. HTML is what type of language?</label>
+        </span>
+        
+        <span>
+            <br><br><input id="div_7_option_1" type="radio">
+            <label>Markup Language</label>
+            <br><input id="div_7_option_2" type="radio">
+            <label>Scripting Language</label>
+            <br><input id="div_7_option_3" type="radio">
+            <label>Programming Language</label>
+        </span>
+
+        <button onclick="changeQuestions('8')" id="btn btn-success">Next</button>
+        <button onclick="check('Markup Language', 'div_7_option_1')" class="btn btn-success">Check</button>
+
+    </div>
+
+
+    <div id="div_8" style="display: none; background-color: lightblue; padding: 20px;">
+        <span>
+            <label style="font-weight: bold;">Q8. HTML stands for -</label>
+        </span>
+        
+        <span>
+            <br><br><input id="div_8_option_1" type="radio">
+            <label>Hyper Text Markup Language</label>
+            <br><input id="div_8_option_2" type="radio">
+            <label>Hyper Text Makeup Language</label>
+            <br><input id="div_8_option_3" type="radio">
+            <label>Hyper Text Maskup Language</label>
+        </span>
+
+        <button onclick="changeQuestions('9')" id="btn btn-success">Next</button>
+        <button onclick="check('Hyper Text Markup Language', 'div_8_option_1')" class="btn btn-success">Check</button>
+
+    </div>
+
+
+    <div id="div_9" style="display: none; background-color: lightblue; padding: 20px;">
+        <span>
+            <label style="font-weight: bold;">Q9. How can you make a bulleted list with numbers ?</label>
+        </span>
+        
+        <span>
+            <br><br><input id="div_9_option_1" type="radio">
+            <label>ul tag</label>
+            <br><input id="div_9_option_2" type="radio">
+            <label>ol tag</label>
+            <br><input id="div_9_option_3" type="radio">
+            <label>list tag</label>
+        </span>
+
+        <button onclick="changeQuestions('10')" id="btn btn-success">Next</button>
+        <button onclick="check('ol tag', 'div_9_option_2')" class="btn btn-success">Check</button>
+
+    </div>
+
+
+    <div id="div_10" style="display: none; background-color: lightblue; padding: 20px;">
+        <span>
+            <label style="font-weight: bold;">Q10. HTML web pages can be read and rendered by - -</label>
+        </span>
+        
+        <span>
+            <br><br><input id="div_10_option_1" type="radio">
+            <label>Compiler</label>
+            <br><input id="div_10_option_2" type="radio">
+            <label>Web Browser</label>
+            <br><input id="div_10_option_3" type="radio">
+            <label>Interpreter</label>
+        </span>
+
+        <button onclick="changeQuestions('done')" id="btn btn-success">Next</button>
+        <button onclick="check('Web Browser', 'div_10_option_2')" class="btn btn-success">Check</button>
+
+    </div>
+
+    <label class="btn btn-info" id="correct_wrong" style="font-size: 30px;"></label>
+    <h1 style="font-size: 50px;" class="btn btn-warning">Score : <span id="score"></span></h1>
+    <script src="main.js"></script>
+</body>
+</html>
